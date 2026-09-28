@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #0b0d12;
+  margin: 0;
+}
+
+.card-wrapper {
+  perspective: 1000px;
+  margin: 10px;
+  display: inline-block;
+}
+
+/* Compact Card Box */
+.pokemon-card {
+  width: 200px !important;
+  height: 280px !important;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.15s ease-out, box-shadow 0.25s ease;
+  transform-style: preserve-3d;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+  background: #181a20;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.pokemon-card:hover {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7), 0 0 15px rgba(255, 203, 5, 0.3);
+}
+
+/* Restrict the Gengar/Pokémon image size */
+.card-image {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 200px !important;
+  max-height: 280px !important;
+  object-fit: cover !important;
+  border-radius: 12px;
+  display: block;
+}
+
+/* EX Glow Border */
+.pokemon-card.is-ex {
+  border: 1px solid rgba(255, 215, 0, 0.5);
+  box-shadow: 0 0 10px rgba(255, 203, 5, 0.3);
+}
+
+.holo-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  mix-blend-mode: color-dodge;
+  transition: opacity 0.2s ease;
+  border-radius: 12px;
+}
+
+/* Stats Button */
+.stats-toggle-btn {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  z-index: 10;
+  padding: 4px 10px;
+  background: rgba(15, 17, 23, 0.85);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.stats-toggle-btn:hover {
+  background: #ffcb05;
+  color: #000;
+}
+
+/* Stats Screen Overlay */
+.card-stats-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(13, 15, 22, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 12px;
+  box-sizing: border-box;
+  color: #e2e8f0;
+  text-align: left;
+  overflow-y: auto;
+  border-radius: 12px;
+  z-index: 5;
+}
+
+.stats-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats-header h3 {
+  margin: 0;
+  font-size: 13px;
+  color: #ffcb05;
+}
+
+.hp-badge {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.card-meta {
+  font-size: 10px;
+  color: #94a3b8;
+  margin: 2px 0 8px 0;
+}
+
+.attacks-section h4 {
+  font-size: 10px;
+  color: #ffcb05;
+  margin: 0 0 4px 0;
+}
+
+.attack-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+.attack-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.attack-damage {
+  color: #f87171;
+}
+
+.attack-text {
+  font-size: 9px;
+  color: #94a3b8;
+  margin: 2px 0 0 0;
+}
+
+.extra-stats {
+  font-size: 9px;
+  color: #94a3b8;
+  margin-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 6px;
+}
